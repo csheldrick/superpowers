@@ -2,11 +2,11 @@
 description: "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes"
 model: inherit
 handoffs:
-  - label: "브레인스토밍 (Brainstorm)"
+  - label: "Brainstorm"
     agent: brainstorming
     prompt: "The debugging revealed an architectural issue. Explore a redesign."
     send: false
-  - label: "계획 작성 (Create Plan)"
+  - label: "Create Plan"
     agent: writing-plans
     prompt: "Create a refactoring plan to fix the root cause found above."
     send: false

@@ -2,11 +2,11 @@
 description: "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation"
 model: inherit
 handoffs:
-  - label: "서브에이전트 실행 (Resume Subagent Execution)"
+  - label: "Resume Subagent Execution"
     agent: subagent-driven-development
     prompt: "Continue implementation with the review feedback applied."
     send: false
-  - label: "인라인 실행 (Resume Inline Execution)"
+  - label: "Resume Inline Execution"
     agent: executing-plans
     prompt: "Continue execution with the review feedback applied."
     send: false

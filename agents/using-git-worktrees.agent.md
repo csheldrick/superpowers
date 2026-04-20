@@ -2,11 +2,11 @@
 description: "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification"
 model: inherit
 handoffs:
-  - label: "서브에이전트 실행 (Subagent Execution)"
+  - label: "Subagent Execution"
     agent: subagent-driven-development
     prompt: "Worktree is ready. Execute the implementation plan."
     send: false
-  - label: "인라인 실행 (Inline Execution)"
+  - label: "Inline Execution"
     agent: executing-plans
     prompt: "Worktree is ready. Execute the implementation plan inline."
     send: false

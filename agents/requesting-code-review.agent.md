@@ -2,7 +2,7 @@
 description: "Use when completing tasks, implementing major features, or before merging to verify work meets requirements"
 model: inherit
 handoffs:
-  - label: "리뷰 피드백 처리 (Handle Review Feedback)"
+  - label: "Handle Review Feedback"
     agent: receiving-code-review
     prompt: "Process the code review results above."
     send: false
