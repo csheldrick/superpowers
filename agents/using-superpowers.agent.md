@@ -1,6 +1,6 @@
 ---
 description: "Use when starting any conversation - establishes how to find and use agents, requiring agent invocation before ANY response including clarifying questions"
-model: inherit
+model: "claude-opus-4.6,claude-sonnet-4.6,gpt-5.3-codex,gpt-5-mini,gpt-4o"
 handoffs:
   - label: "Brainstorming"
     agent: brainstorming
