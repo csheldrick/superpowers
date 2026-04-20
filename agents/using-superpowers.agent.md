@@ -2,19 +2,19 @@
 description: "Use when starting any conversation - establishes how to find and use agents, requiring agent invocation before ANY response including clarifying questions"
 model: inherit
 handoffs:
-  - label: "브레인스토밍 (Brainstorm)"
+  - label: "Brainstorming"
     agent: brainstorming
     prompt: "Explore and design a solution for the user's request above."
     send: false
-  - label: "디버깅 (Debug)"
+  - label: "Debugging"
     agent: systematic-debugging
     prompt: "Diagnose and fix the issue described above."
     send: false
-  - label: "에이전트 작성 (Write Agent)"
+  - label: "Create Agent"
     agent: writing-agents
     prompt: "Help write or modify an agent based on the request above."
     send: false
-  - label: "리뷰 피드백 처리 (Handle Review Feedback)"
+  - label: "Review Feedback Processing"
     agent: receiving-code-review
     prompt: "Process the code review feedback above."
     send: false
@@ -36,9 +36,9 @@ This is not negotiable. This is not optional. You cannot rationalize your way ou
 
 Agent instructions override default system prompt behavior, but **user instructions always take precedence**:
 
-1. **User's explicit instructions** (CLAUDE.md, GEMINI.md, AGENTS.md, direct requests) ??highest priority
-2. **Agent instructions** ??override default system behavior where they conflict
-3. **Default system prompt** ??lowest priority
+1. **User's explicit instructions** (CLAUDE.md, GEMINI.md, AGENTS.md, direct requests) -> highest priority
+2. **Agent instructions** -> override default system behavior where they conflict
+3. **Default system prompt** -> lowest priority
 
 If CLAUDE.md, GEMINI.md, or AGENTS.md says "don't use TDD" and an agent says "always use TDD," follow the user's instructions. The user is in control.
 
@@ -88,7 +88,7 @@ digraph agent_flow {
 
 ## Red Flags
 
-These thoughts mean STOP?�you're rationalizing:
+These thoughts mean STOP? you're rationalizing:
 
 | Thought | Reality |
 |---------|---------|
@@ -112,20 +112,20 @@ When multiple agents could apply, use this order:
 1. **Process agents first** (brainstorming, systematic-debugging) - these determine HOW to approach the task
 2. **Implementation agents second** - these guide execution
 
-## Intent Classification (라우팅)
+## Intent Classification (Routing)
 
-사용자 메시지를 분석하여 가장 적합한 에이전트로 라우팅한다:
+It analyzes user messages and routes them to the most suitable agent.:
 
 ```
-1. 명확한 버그/에러 메시지?      → systematic-debugging
-2. 코드 리뷰 피드백 처리?        → receiving-code-review
-3. 에이전트 작성/수정 요청?      → writing-agents
-4. 그 외 (기본)                  → brainstorming
+1. Clear Bug/Error Messages?      → systematic-debugging
+2. Handling Code Review Feedback?        → receiving-code-review
+3. Agent Creation/Modification Request?      → writing-agents
+4. Other (Default)                 → brainstorming
 ```
 
-| 의도 신호 | 라우팅 대상 |
+| Intent Signal | Routing Target |
 |-----------|------------|
-| 에러 메시지, 스택 트레이스, "안 됨", "버그", "실패" | `systematic-debugging` |
-| "리뷰 결과", "피드백", PR 코멘트 언급 | `receiving-code-review` |
-| "에이전트 만들어", ".agent.md", "에이전트 수정" | `writing-agents` |
-| 새 기능, 변경 요청, 아이디어, "~하고 싶어" | `brainstorming` |
+| Error message, stack trace, "not working," "bug," "failure" | `systematic-debugging` |
+| "Review Results," "Feedback," and PR Comment Mentions | `receiving-code-review` |
+| "Create Agent", ".agent.md", "Edit Agent" | `writing-agents` |
+| New Features, Change Requests, Ideas, and "I Want To..." | `brainstorming` |
