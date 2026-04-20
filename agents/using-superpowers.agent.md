@@ -10,7 +10,7 @@ handoffs:
     agent: systematic-debugging
     prompt: "Diagnose and fix the issue described above."
     send: false
-  - label: "Create Agent"
+  - label: "Write Agent"
     agent: writing-agents
     prompt: "Help write or modify an agent based on the request above."
     send: false
@@ -114,7 +114,7 @@ When multiple agents could apply, use this order:
 
 ## Intent Classification (Routing)
 
-It analyzes user messages and routes them to the most suitable agent.:
+Analyze user messages and route to the most suitable agent:
 
 ```
 1. Clear Bug/Error Messages?      → systematic-debugging

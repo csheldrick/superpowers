@@ -2,7 +2,7 @@
 description: "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."
 model: inherit
 handoffs:
-  - label: "계획 작성 (Create Plan)"
+  - label: "Create Plan"
     agent: writing-plans
     prompt: "Create an implementation plan based on the approved design above."
     send: false

@@ -2,15 +2,15 @@
 description: "Use when you have a spec or requirements for a multi-step task, before touching code"
 model: inherit
 handoffs:
-  - label: "서브에이전트 실행 (Subagent Execution)"
+  - label: "Subagent Execution"
     agent: subagent-driven-development
     prompt: "Execute the implementation plan above using subagent-driven development."
     send: false
-  - label: "인라인 실행 (Inline Execution)"
+  - label: "Inline Execution"
     agent: executing-plans
     prompt: "Execute the implementation plan above inline."
     send: false
-  - label: "워크트리 생성 (Create Worktree)"
+  - label: "Create Worktree"
     agent: using-git-worktrees
     prompt: "Set up a git worktree for the implementation plan above."
     send: false

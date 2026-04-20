@@ -2,7 +2,7 @@
 description: "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always"
 model: inherit
 handoffs:
-  - label: "마무리 (Finish Branch)"
+  - label: "Finish Branch"
     agent: finishing-a-development-branch
     prompt: "Verification passed. Finish the development branch."
     send: false
