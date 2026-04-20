@@ -10,7 +10,7 @@ handoffs:
     agent: systematic-debugging
     prompt: "Diagnose the issue encountered during implementation."
     send: false
-  - label: "Request Review"
+  - label: "Code Review Request"
     agent: requesting-code-review
     prompt: "Request a code review for the changes made above."
     send: false
